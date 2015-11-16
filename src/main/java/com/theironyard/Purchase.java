@@ -14,11 +14,12 @@ public class Purchase {
     @GeneratedValue
     Integer id;
 
-    String date;
+    String date; //could have used LocalDateTime instead but isnt necessary
     String creditCard;
-    int cvv;
+    Integer cvv; //MUST be Integer NOT int
     String category;
 
+    //entire user object inside of the Purchase class. so we do NOT need to store customer_id field.
     @ManyToOne
     Customer customer;
 }

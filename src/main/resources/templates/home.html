@@ -14,6 +14,8 @@
 <a href="/?type=Food">Food</a>
 <a href="/?type=Jewelry">Jewelry</a>
 
+<br><br>
+
 <table>
 
     <tr>
@@ -26,21 +28,21 @@
     </tr>
 
     {{#purchases}}
-    {{#customer}}
     <tr>
-
+        {{#customer}}
         <td>{{name}}</td>
         <td>{{email}}</td>
+        {{/customer}}
         <td>{{category}}</td>
         <td>{{creditCard}}</td>
         <td>{{cvv}}</td>
         <td>{{date}}</td>
     </tr>
-    {{/customer}}
     {{/purchases}}
 
 </table>
-
-
+{{#showNext}}
+<a href="/?page={{nextPage}}{{#category}}&category={{.}}{{/category}}">Next</a>
+{{/showNext}}
 </body>
 </html>
